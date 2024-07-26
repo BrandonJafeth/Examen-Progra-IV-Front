@@ -10,10 +10,10 @@ export function Navbar() {
           <span className="sr-only">Acme Inc</span>
         </Link>
         <nav className="hidden space-x-4 lg:flex">
-          <Link className="text-sm font-medium hover:underline underline-offset-4" to={"/"}>
+          <Link className="text-sm font-medium hover:underline underline-offset-4" to="/ticket">
             Ticket
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" to={"/"}>
+          <Link className="text-sm font-medium hover:underline underline-offset-4" to="/dashboard">
             DashBoard
           </Link>
         </nav>

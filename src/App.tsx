@@ -1,11 +1,12 @@
 
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { BrowserRouter as Router } from 'react-router-dom'; 
+import { QueryClient, QueryClientProvider } from 
+'react-query';
+import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom'; 
 import './index.css'
 import { Navbar } from './components/component/navbar';
-
 import TicketPage from './Pages/Ticket';
-import { CardDashboard } from './components/component/card-dashboard';
+import Dashboard from './Pages/Dashboard';
+import { ToastContainer } from 'react-toastify';
 
 
 const queryClient = new QueryClient();
@@ -14,11 +15,15 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Router>
         <Navbar />
-        <TicketPage/>
-        <CardDashboard/>
-
+        <Routes>
+          <Route path="/ticket" element={<TicketPage/>} />
+          <Route path="/dashboard" element={<Dashboard/>} />
+          <Route path="/" element={<Navigate to="/ticket" />} />
+        </Routes>
+        <ToastContainer />
       </Router>
     </QueryClientProvider>
   );
 }
+
 export default App;
